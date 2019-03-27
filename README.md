@@ -8,3 +8,22 @@ Site web d'achat de "goodies"
             - stylesheet.css
             - .sql
             - /lib/ -> contient toutes les textures/images/sons
+
+Collections :
+    • Star wars
+    • Indiana Jones
+    • Rick et Morty
+    • Game Of Thrones
+    • Princesses Disney
+    • Marvel
+    • DC
+    • Mario
+    • Harry Potter
+    • Pokemon
+
+Catégories :
+    • Mug
+    • Habits
+    • Jouet/figurines
+    • Poster
+    • Sac à dos
