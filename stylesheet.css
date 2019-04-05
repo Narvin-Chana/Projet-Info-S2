@@ -1,1 +1,32 @@
+.navbar {
+    text-align: center;
+    margin-top: 0;
+}
 
+.navbar input[type=text] {}
+
+.navbar ul {
+    display: block;
+    float: right;
+    list-style: none;
+}
+
+.navbar li {
+    display: inline-block;
+    padding-right: 200px;
+}
+
+.search_bar {
+    top: 4%;
+    left: 40%;
+
+}
+
+.search_bar input {}
+
+.search_bar button {
+    background: url(img/search%20icon.png);
+    padding: 1%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
