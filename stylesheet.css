@@ -1,32 +1,52 @@
-.navbar {
-    text-align: center;
-    margin-top: 0;
+* {
+    font-family: arial
 }
 
-.navbar input[type=text] {}
+.navbar {
+    text-align: center;
+}
+
+.navbar a {
+    float: left;
+}
 
 .navbar ul {
     display: block;
-    float: right;
     list-style: none;
+    position: absolute;
+    top: 1%;
+    right: 3%;
+    padding: 1%;
+    border-style: solid;
+    font-size: 125%;
+    width: 25%;
+}
+
+.navbar li:last-child {
+    border-right: none;
 }
 
 .navbar li {
     display: inline-block;
-    padding-right: 200px;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-right: 1px solid;
 }
 
 .search_bar {
+    position: absolute;
     top: 4%;
-    left: 40%;
-
+    width: 90%
 }
 
-.search_bar input {}
+.search_bar input[type="text"] {
+    font-size: 40px;
+}
 
 .search_bar button {
     background: url(img/search%20icon.png);
-    padding: 1%;
+    padding: 1.35%;
+    position: absolute;
     background-repeat: no-repeat;
     background-size: cover;
 }
