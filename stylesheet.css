@@ -75,3 +75,65 @@
 #panier a:hover {
     background-color: white;
 }
+
+
+.info_client{
+    background-color: lightskyblue;
+    width: 20%;
+    padding: 1%;
+    border-style: solid;
+    border-color: navy;
+    border-width: 10%;
+    float: left;
+    margin-left:5%;
+    margin-top:2%;
+    color:navy;
+
+}
+
+.point_fidelite {
+    background-color: lightskyblue;
+    width: 20%;
+    padding: 1%;
+    border-style: solid;
+    border-color: navy;
+    border-width: 10%;
+    float: right;
+    margin-right:10%;
+    margin-top:2%;
+    
+  
+    
+    
+}
+#titre{
+    font-size:50px;
+    background-color: lightskyblue;
+    border-style: solid;
+    border-color: navy;
+    border-width: 10%;
+    padding: 1%;
+    margin-top:0%;
+
+}
+.commande{
+    background-color: lightskyblue;
+    margin-top:20%;
+    border-style: solid;
+    border-color: navy;
+    border-width: 10%;
+    
+    
+}
+.commande th{
+  border-style: solid;
+  border-color: azure; 
+  
+  
+}
+#pts{
+    text-align: center;
+    color:red;
+    font-weight: bold;
+
+}
