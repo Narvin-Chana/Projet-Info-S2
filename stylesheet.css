@@ -76,8 +76,7 @@
     background-color: white;
 }
 
-
-.info_client{
+.client_info {
     background-color: lightskyblue;
     width: 20%;
     padding: 1%;
@@ -85,13 +84,13 @@
     border-color: navy;
     border-width: 10%;
     float: left;
-    margin-left:5%;
-    margin-top:2%;
-    color:navy;
+    margin-left: 5%;
+    margin-top: 2%;
+    color: navy;
 
 }
 
-.point_fidelite {
+.loyalty_points {
     background-color: lightskyblue;
     width: 20%;
     padding: 1%;
@@ -99,41 +98,41 @@
     border-color: navy;
     border-width: 10%;
     float: right;
-    margin-right:10%;
-    margin-top:2%;
-    
-  
-    
-    
+    margin-right: 10%;
+    margin-top: 2%;
 }
-#titre{
-    font-size:50px;
+
+#title {
+    font-size: 50px;
     background-color: lightskyblue;
     border-style: solid;
     border-color: navy;
     border-width: 10%;
     padding: 1%;
-    margin-top:0%;
+    margin-top: 0%;
 
 }
-.commande{
+
+.orders {
     background-color: lightskyblue;
-    margin-top:20%;
+    margin-top: 20%;
     border-style: solid;
     border-color: navy;
     border-width: 10%;
-    
-    
+
+
 }
-.commande th{
-  border-style: solid;
-  border-color: azure; 
-  
-  
+
+.orders th {
+    border-style: solid;
+    border-color: azure;
+
+
 }
-#pts{
+
+#pts {
     text-align: center;
-    color:red;
+    color: red;
     font-weight: bold;
 
 }
