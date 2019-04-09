@@ -26,11 +26,12 @@ $req_fp="SELECT client.PTS_FIDELITE FROM client where client.ID_CLIENT=1; ";
     <div class="my_account">
         <p id="title">Mon Compte </p>
         <div class="client_info">
-            <p>Nom: <?php convertTableToString(executeSQL($req_nom));?></p>
-            <p>Prenom: <?php convertTableToString(executeSQL($req_prenom));?></p>
-            <p>Email: <?php convertTableToString(executeSQL($req_email));?></p>
-            <p>Telephone: 0<?php convertTableToString(executeSQL($req_tel));?></p>
-            <p>Date de Naissance: <?php convertTableToString(executeSQL($req_bd));?></p>
+            <p>Nom: <?php echo(convertTableToString(executeSQL($req_nom)));?></p>
+            <p>Prenom: <?php echo(convertTableToString(executeSQL($req_prenom)));?></p>
+            <p>Email: <?php echo(convertTableToString(executeSQL($req_email)));?></p>
+            <p>Telephone: 0<?php echo(convertTableToString(executeSQL($req_tel)));?></p>
+            <p>Date de Naissance: <?php echo(convertTableToString(executeSQL($req_bd)));?></p>
+
 
         </div>
         <div class="loyalty_points">
