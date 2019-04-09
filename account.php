@@ -22,6 +22,26 @@ $req_fp="SELECT client.PTS_FIDELITE FROM client where client.ID_CLIENT=1; ";
     <link href="stylesheet.css" rel="stylesheet">
 </head>
 
+<header>
+    <table class="navbar">
+        <tr>
+            <td id="logo">
+                <a href="index.html"><img id="main_logo" src="img/googlies%20logo.png"></a>
+            </td>
+            <td id="search-bar">
+                <input type="text" placeholder="Rechercher...">
+                <button id="submit-button" type="submit"></button>
+            </td>
+            <td id="espace-client">
+                <a href="connection.html">Espace Client</a>
+            </td>
+            <td id="panier">
+                <a href="basket.html">Panier</a>
+            </td>
+        </tr>
+    </table>
+</header>
+
 <body>
     <div class="my_account">
         <p id="title">Mon Compte </p>
@@ -35,8 +55,8 @@ $req_fp="SELECT client.PTS_FIDELITE FROM client where client.ID_CLIENT=1; ";
 
         </div>
         <div class="loyalty_points">
-            <p>vos points de fidelités:</p>
-            <p id="pts"><?php convertTableToString(executeSQL($req_fp));?> </p>
+            <p>Vos Points de Fidelités:</p>
+            <p id="pts"><?php echo(convertTableToString(executeSQL($req_fp)));?> </p>
 
         </div>
         <div class="orders">

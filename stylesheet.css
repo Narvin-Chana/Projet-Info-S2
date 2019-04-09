@@ -1,5 +1,12 @@
 * {
     font-family: arial;
+}
+
+header {
+    background-color: lightyellow;
+}
+
+body {
     background-color: lightyellow;
 }
 
@@ -134,5 +141,13 @@
     text-align: center;
     color: red;
     font-weight: bold;
+    font-size: 300%;
+}
 
+.client_info * {
+    background-color: lightskyblue;
+}
+
+.loyalty_points * {
+    background-color: lightskyblue;
 }

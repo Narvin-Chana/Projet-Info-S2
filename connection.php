@@ -26,6 +26,7 @@
 				echo("redirection vers la page precedente");
 				$req_c="select client.ID_CLIENT from client where client.EMAIL="."'".$email_written."'".";" ;
 				$client_id=convertTableToString($ServerSQL->query($req_c));
+                header("Location: account.php");
 				die();
 				
 			}
