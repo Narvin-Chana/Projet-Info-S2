@@ -79,6 +79,7 @@
     font-size: 200%;
     background-color: white;
     border-style: solid black 1pt;
+    height: 37px;
 }
 
 #search-bar button {
@@ -93,6 +94,8 @@
     background: url(img/search%20icon.png);
     background-repeat: no-repeat;
     background-size: cover;
+    width: 55px;
+    height: 55px;
 }
 
 #espace-client {
