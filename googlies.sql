@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 10 avr. 2019 à 13:20
+-- Généré le :  mer. 10 avr. 2019 à 13:35
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -94,9 +94,9 @@ CREATE TABLE IF NOT EXISTS `client` (
   `PRENOM` varchar(50) NOT NULL,
   `TELEPHONE` varchar(10) NOT NULL,
   `DATE_NAISSANCE` date NOT NULL,
-  `PTS_FIDELITE` int(11) NOT NULL,
-  `ADRESSE` varchar(50) NOT NULL,
-  `COORD_BANC` varchar(16) NOT NULL,
+  `PTS_FIDELITE` int(11) DEFAULT '0',
+  `ADRESSE` varchar(50) DEFAULT NULL,
+  `COORD_BANC` varchar(16) DEFAULT NULL,
   PRIMARY KEY (`ID_CLIENT`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
