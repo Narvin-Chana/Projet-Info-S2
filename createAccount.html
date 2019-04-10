@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Créer un compte</title>
+    <meta charset="UTF-8">
+    <link href="stylesheet.css" rel="stylesheet">
+</head>
+
+<body>
+    <div style="border: 2px solid blue; padding: 1%; text-align: center; margin: auto; margin-top: 10%; width: 40%;">
+        <h2>Créer un compte</h2>
+        <form action="createAccount.php" method="post">
+
+            <table style="margin: auto;">
+                <tr>
+                    <td>Adresse mail: </td>
+                    <td><input type="text" name="email" placeholder="" style=" width:120%;" required></td>
+                </tr>
+                <tr>
+                    <td>Mot de passe: </td>
+                    <td><input type="password" name="password" style=" width:120%;" required></td>
+                    <td style="display:none"><img src="img/error%20icon.png" style="width:20%;"></td>
+                </tr>
+                <tr>
+                    <td>Confirmer Mot de passe:</td>
+                    <td> <input type="password" style=" width:120%;" required></td>
+                    <td style="display:none"><img src="img/error%20icon.png" style="width:20%;"></td>
+                </tr>
+                <tr>
+                    <td>Date de naissance: </td>
+                    <td><input type="date" name="birthdate" required></td>
+                </tr>
+                <tr>
+                    <td>Nom: </td>
+                    <td><input type="text" name="surname" style=" width:120%;" required></td>
+                </tr>
+                <tr>
+                    <td>Prénom: </td>
+                    <td><input type="text" name="name" style=" width:120%;" required></td>
+                </tr>
+                <tr>
+                    <td>Téléphone: </td>
+                    <td><input type="text" name="telephone" style=" width:120%;" required></td>
+                </tr>
+            </table>
+            <button type="submit">Valider</button>
+        </form>
+        <a href="connection.html">Vous avez déjà un compte?</a>
+    </div>
+</body>
+
+</html>
