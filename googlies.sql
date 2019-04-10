@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 10 avr. 2019 à 08:42
+-- Généré le :  mer. 10 avr. 2019 à 13:08
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -41,14 +41,19 @@ CREATE TABLE IF NOT EXISTS `article` (
   PRIMARY KEY (`ID_ARTICLE`),
   KEY `ARTICLE_CATEGORIE_FK` (`ID_CATEGORIE`),
   KEY `ARTICLE_COLLECTION0_FK` (`ID_COLLECTION`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `article`
 --
 
 INSERT INTO `article` (`ID_ARTICLE`, `NOM_ARTICLE`, `DESCRIPTION`, `PRIX_HT`, `PRIX_TTC`, `IMAGE`, `ID_CATEGORIE`, `ID_COLLECTION`) VALUES
-(1, 'Mug DarkVador', 'C\'est une tasse dark Vador', 13.19, 10.99, '', 1, 1);
+(1, 'Mug DarkVador', 'C\'est une tasse dark Vador', 13.75, 11, '', 1, 1),
+(2, 'Mug Captain America', 'tasse captain america', 13.75, 11, '', 1, 2),
+(3, 'Sac Gryffondor', 'Sac a dos de la maison Gryffondor de Harry potter', 25, 20, '', 5, 9),
+(4, 'Sac Serpentard', 'Sac a dos de la maison Serpentard de Harry potter', 25, 20, '', 5, 9),
+(5, 'Poster Indiana Jones Temple Maudit', 'Poster issu du film indiana Jones et le temple Maudit', 15, 12, '', 4, 3),
+(6, 'Figurine John Snow', 'Figurine John Snow issu de la serie Game of thrones', 31.25, 25, '', 3, 5);
 
 -- --------------------------------------------------------
 
@@ -61,14 +66,18 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   `ID_CATEGORIE` int(11) NOT NULL AUTO_INCREMENT,
   `NOM_CATEGORIE` varchar(50) NOT NULL,
   PRIMARY KEY (`ID_CATEGORIE`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `categorie`
 --
 
 INSERT INTO `categorie` (`ID_CATEGORIE`, `NOM_CATEGORIE`) VALUES
-(1, 'Mug');
+(1, 'Mug'),
+(2, 'Habits'),
+(3, 'Jouet/Figurines'),
+(4, 'Poster'),
+(5, 'Sac à dos');
 
 -- --------------------------------------------------------
 
@@ -111,7 +120,7 @@ CREATE TABLE IF NOT EXISTS `collection` (
   `ID_COLLECTION` int(11) NOT NULL AUTO_INCREMENT,
   `NOM_COLLECTION` varchar(50) NOT NULL,
   PRIMARY KEY (`ID_COLLECTION`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `collection`
@@ -119,7 +128,15 @@ CREATE TABLE IF NOT EXISTS `collection` (
 
 INSERT INTO `collection` (`ID_COLLECTION`, `NOM_COLLECTION`) VALUES
 (1, 'StarWars'),
-(2, 'Marvel');
+(2, 'Marvel'),
+(3, 'Indiana Jones'),
+(4, 'Rick et Morty'),
+(5, 'Game Of Thrones'),
+(6, 'Princesses Disney'),
+(7, 'DC '),
+(8, 'Mario'),
+(9, 'Harry Potter'),
+(10, 'Pokemon');
 
 -- --------------------------------------------------------
 
@@ -144,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `commande` (
 --
 
 INSERT INTO `commande` (`ID_COMMANDE`, `DATE_COMMANDE`, `ETAT`, `ID_CLIENT`, `ID_LIVRAISON`) VALUES
-(1, '2019-02-02', 'Livré', 1, 1);
+(1, '2019-02-02', 'Livre', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -159,6 +176,14 @@ CREATE TABLE IF NOT EXISTS `est_commande` (
   PRIMARY KEY (`ID_ARTICLE`,`ID_COMMANDE`),
   KEY `EST_COMMANDE_COMMANDE0_FK` (`ID_COMMANDE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `est_commande`
+--
+
+INSERT INTO `est_commande` (`ID_ARTICLE`, `ID_COMMANDE`) VALUES
+(1, 1),
+(6, 1);
 
 -- --------------------------------------------------------
 
@@ -201,14 +226,20 @@ CREATE TABLE IF NOT EXISTS `livraison` (
   `LIVREUR` varchar(50) NOT NULL,
   `DATE_LIVRAISON` date NOT NULL,
   PRIMARY KEY (`ID_LIVRAISON`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `livraison`
 --
 
 INSERT INTO `livraison` (`ID_LIVRAISON`, `LIVREUR`, `DATE_LIVRAISON`) VALUES
-(1, 'ChronoPost', '2019-02-19');
+(1, 'ChronoPost', '2019-02-19'),
+(2, 'UPS', '2019-06-12'),
+(3, 'UPS', '2019-01-24'),
+(4, 'DHL', '2019-01-16'),
+(5, 'TNT', '2019-06-13'),
+(6, 'France Express', '2019-03-15'),
+(7, 'ChronoPost', '2019-08-22');
 
 -- --------------------------------------------------------
 
