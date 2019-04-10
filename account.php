@@ -1,13 +1,16 @@
 <?php
 
 include("main.php");
+session_start();
+$client_id=$_SESSION["id"];
 
-$req_nom="SELECT client.NOM FROM client where client.ID_CLIENT=1; ";
-$req_prenom="SELECT client.PRENOM FROM client where client.ID_CLIENT=1; ";
-$req_email="SELECT client.EMAIL FROM client where client.ID_CLIENT=1; ";
-$req_tel="SELECT client.TELEPHONE FROM client where client.ID_CLIENT=1; ";
-$req_bd="SELECT client.DATE_NAISSANCE FROM client where client.ID_CLIENT=1; ";
-$req_fp="SELECT client.PTS_FIDELITE FROM client where client.ID_CLIENT=1; ";
+
+$req_nom="SELECT client.NOM FROM client where client.ID_CLIENT=".$client_id."; ";
+$req_prenom="SELECT client.PRENOM FROM client where client.ID_CLIENT=".$client_id."; ";
+$req_email="SELECT client.EMAIL FROM client where client.ID_CLIENT=".$client_id."; ";
+$req_tel="SELECT client.TELEPHONE FROM client where client.ID_CLIENT=".$client_id."; ";
+$req_bd="SELECT client.DATE_NAISSANCE FROM client where client.ID_CLIENT=".$client_id."; ";
+$req_fp="SELECT client.PTS_FIDELITE FROM client where client.ID_CLIENT=".$client_id."; ";
 ?>
 
 
@@ -42,6 +45,7 @@ $req_fp="SELECT client.PTS_FIDELITE FROM client where client.ID_CLIENT=1; ";
     </table>
 </header>
 
+
 <body>
     <div class="my_account">
         <p id="title">Mon Compte </p>
@@ -49,13 +53,13 @@ $req_fp="SELECT client.PTS_FIDELITE FROM client where client.ID_CLIENT=1; ";
             <p>Nom: <?php echo(convertTableToString(executeSQL($req_nom)));?></p>
             <p>Prenom: <?php echo(convertTableToString(executeSQL($req_prenom)));?></p>
             <p>Email: <?php echo(convertTableToString(executeSQL($req_email)));?></p>
-            <p>Telephone: 0<?php echo(convertTableToString(executeSQL($req_tel)));?></p>
+            <p>Telephone: <?php echo(convertTableToString(executeSQL($req_tel)));?></p>
             <p>Date de Naissance: <?php echo(convertTableToString(executeSQL($req_bd)));?></p>
 
 
         </div>
         <div class="loyalty_points">
-            <p>Vos Points de Fidelités:</p>
+            <p>vos points de fidelités:</p>
             <p id="pts"><?php echo(convertTableToString(executeSQL($req_fp)));?> </p>
 
         </div>
