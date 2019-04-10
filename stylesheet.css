@@ -175,6 +175,7 @@ body {
 #infoProduct {
     border: solid grey 1pt;
     padding-right: 130pt;
+    padding-left: 1.5%;
 }
 
 #descrProduct {
@@ -200,9 +201,8 @@ body {
 
 #ajoutPanier a {
     display: block;
-    height: 100%;
     background-color: steelblue;
-    font-size: 140%;
+    font-size: 110%;
     font-weight: bold;
     text-decoration: none;
     color: black;
