@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 07 avr. 2019 à 14:42
+-- Généré le :  mer. 10 avr. 2019 à 08:42
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
   `ID_CATEGORIE` int(11) NOT NULL AUTO_INCREMENT,
   `NOM_CATEGORIE` varchar(50) NOT NULL,
   PRIMARY KEY (`ID_CATEGORIE`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `categorie`
@@ -83,20 +83,22 @@ CREATE TABLE IF NOT EXISTS `client` (
   `MDP` varchar(50) NOT NULL,
   `NOM` varchar(50) NOT NULL,
   `PRENOM` varchar(50) NOT NULL,
-  `TELEPHONE` int(11) NOT NULL,
+  `TELEPHONE` varchar(10) NOT NULL,
   `DATE_NAISSANCE` date NOT NULL,
   `PTS_FIDELITE` int(11) NOT NULL,
-  `ADRESSE` varchar(5) NOT NULL,
-  `COORD_BANC` varchar(50) NOT NULL,
+  `ADRESSE` varchar(50) NOT NULL,
+  `COORD_BANC` varchar(16) NOT NULL,
   PRIMARY KEY (`ID_CLIENT`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `client`
 --
 
 INSERT INTO `client` (`ID_CLIENT`, `EMAIL`, `MDP`, `NOM`, `PRENOM`, `TELEPHONE`, `DATE_NAISSANCE`, `PTS_FIDELITE`, `ADRESSE`, `COORD_BANC`) VALUES
-(1, 'narvin.chana@etu.univ-tours.fr', 'motdepasse', 'Chana', 'Narvin', 675908412, '2000-08-21', 0, 'tours', '84546563654615654488498599895987');
+(1, 'narvin.chana@etu.univ-tours.fr', 'motdepasse', 'Chana', 'Narvin', '0675908412', '2000-08-21', 0, 'tours', '1452698763254785'),
+(2, 'simple@gmail.com', '12345', 'Simplet', 'Francky', '0789642536', '1985-06-29', 180, 'Paris', '7854458778547854'),
+(3, 'charlie.dupont@orange.fr', 'password', 'dupont', 'charlie', '0736459685', '1996-12-04', 30, 'Angers', '0147852036985201');
 
 -- --------------------------------------------------------
 
@@ -109,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `collection` (
   `ID_COLLECTION` int(11) NOT NULL AUTO_INCREMENT,
   `NOM_COLLECTION` varchar(50) NOT NULL,
   PRIMARY KEY (`ID_COLLECTION`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `collection`
