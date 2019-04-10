@@ -172,7 +172,7 @@ body {
     font-size: 22pt;
     text-align: right;
     padding-bottom: 10%;
-    padding-right: 5%;
+    padding-right: 2%;
 }
 
 #infoProduct {
@@ -182,6 +182,7 @@ body {
 }
 
 #descrProduct {
+    padding-bottom: 5%;
     padding-left: 1.5%;
     border: solid grey 1pt;
 }
@@ -197,15 +198,16 @@ body {
 
 #ajoutPanier {
     text-align: center;
-    width: 100%;
+    width: 150pt;
     background-color: steelblue;
     border: 2px groove lightblue;
+    height: 120pt;
 }
 
 #ajoutPanier a {
+    padding-top: 35pt;
     display: block;
     background-color: steelblue;
-    font-size: 110%;
     font-weight: bold;
     text-decoration: none;
     color: black;
