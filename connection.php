@@ -60,7 +60,7 @@
     <form action="connection.php" method="POST">
         <table>
             <tr>
-                <Th>connection</Th>
+                <Th>Connexion</Th>
             </tr>
             <tr>
                 <td></td>
@@ -78,7 +78,7 @@
         </table>
 
     </form>
-
+<a href="createAccount.html">Pas de compte?</a>
 
 
 </body>
