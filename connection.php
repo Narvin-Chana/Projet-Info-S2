@@ -1,6 +1,6 @@
 <?php
 
-    include("main.php");
+    require("main.php");
 
 	//$email_written et $password_written est donneé par un formulaire
 	$email_written=$_POST["mail"];
