@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+ <title>Mon panier</title>
+ <meta charset="UTF-8">
+ <link href="article.css" rel="stylesheet">
+</head>
+
+<header>
+    <table id="navbar">
+        <tr>
+            <td id="logo">
+                <a href="index.html"><img id="main_logo" src="img/googlies%20logo.png"></a>
+            </td>
+            <td id="search-bar">
+                <input type="text" placeholder="Rechercher...">
+                <button id="submit-button" type="submit"></button>
+            </td>
+            <td id="espace-client">
+                <a href="account.html">Espace Client</a>
+            </td>
+            <td id="panier">
+                <a href="basket.html">Panier</a>
+            </td>
+        </tr>
+    </table>
+</header>
+
+<body>
+<div id="page">
+    <table id="tableStyle">
+        <tr>
+	    <td id="tableImgProduct"><img id="imgProduct" src="img/article.png"></td>
+            <td>
+                <table id="tableInfoStyle">
+	            <tr>
+	                <td id="infoProduct">
+	                   <p> Nom du produit </p>
+	                </td>
+	            </tr>
+	            <tr>
+	                <td id="infoProduct">
+	                   <p> prix ht <br>
+	                    prix ttc <br>
+	                    promo <br>
+	                    ttc-promo
+	                   </p>
+	                </td>
+	            </tr>
+                </table>
+            </td>
+            <td id="categoryProduct">
+               <p>categorie/collection (tags)
+	       </p>
+		<table>
+		<tr>
+		<td style="padding-left:50%;">
+		<div id="ajoutPanier">
+                 <a href="basket.html">Ajouter au panier</a>
+                </div>
+		</td>
+		</tr>
+		</table>
+            </td>
+        </tr>
+	<tr>
+	    <td colspan=3 id="descrProduct">
+	       <p> description
+	       </p>
+	    </td>
+	</tr>
+    </table>
+</div>
+</body>
+</html>
