@@ -151,3 +151,63 @@ body {
 .loyalty_points * {
     background-color: lightskyblue;
 }
+
+#page {
+    font-size: 16pt;
+}
+
+#tableStyle {
+    width: 100%;
+}
+
+#tableInfoStyle {
+    width: 100%;
+    border-spacing: 25pt;
+}
+
+#categoryProduct {
+    font-size: 22pt;
+    text-align: right;
+    padding-bottom: 10%;
+    padding-right: 5%;
+}
+
+#infoProduct {
+    border: solid grey 1pt;
+    padding-right: 130pt;
+}
+
+#descrProduct {
+    padding-left: 1.5%;
+    border: solid grey 1pt;
+}
+
+#imgProduct {
+    width: 360px;
+    height: auto;
+}
+
+#tableImgProduct {
+    width: 25%;
+}
+
+#ajoutPanier {
+    text-align: center;
+    width: 100%;
+    background-color: steelblue;
+    border: 2px groove lightblue;
+}
+
+#ajoutPanier a {
+    display: block;
+    height: 100%;
+    background-color: steelblue;
+    font-size: 140%;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+#ajoutPanier:hover {
+    background-color: white;
+}
