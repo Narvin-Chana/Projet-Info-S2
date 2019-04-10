@@ -1,6 +1,6 @@
 <?php
 
-include("main.php");
+require("main.php");
 session_start();
 $client_id=$_SESSION["id"];
 
