@@ -201,11 +201,11 @@ body {
     width: 150pt;
     background-color: steelblue;
     border: 2px groove lightblue;
-    height: 120pt;
+    height: 145pt;
 }
 
 #ajoutPanier a {
-    padding-top: 35pt;
+    padding-top: 45pt;
     display: block;
     background-color: steelblue;
     font-weight: bold;
