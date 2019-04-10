@@ -1,0 +1,143 @@
+* {
+    font-family: arial;
+    background-color: lightyellow;
+}
+
+#page {
+    font-size: 16pt;
+}
+
+#tableStyle {
+    width: 100%;
+}
+
+#tableInfoStyle {
+    width: 100%;
+    border-spacing: 25pt;
+}
+
+#categoryProduct {
+    font-size: 22pt;
+    text-align: right;
+    padding-bottom: 10%;
+    padding-right: 5%;
+}
+
+#infoProduct {
+    border: solid grey 1pt;
+    padding-right: 130pt;
+    padding-left: 1.5%;
+}
+
+#descrProduct {
+    padding-left: 1.5%;
+    padding-bottom: 5%;
+    border: solid grey 1pt;
+}
+
+#imgProduct {
+    width: 360px;
+    height: auto;
+}
+
+#tableImgProduct {
+    width: 25%;
+}
+
+#ajoutPanier {
+    text-align: center;
+    width: 100%;
+    background-color: steelblue;
+    border: 2px groove lightblue;
+}
+
+#ajoutPanier a {
+    display: block;
+    background-color: steelblue;
+    font-size: 110%;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+#ajoutPanier:hover {
+    background-color: white;
+}
+
+
+#navbar {
+    width: 100%;
+    border-spacing: 10pt;
+}
+
+#logo {
+    width: 20%;
+    text-align: center;
+}
+
+#search-bar input {
+    width: 95%;
+    font-size: 200%;
+    background-color: white;
+    border-style: solid black 1pt;
+    height: 37px;
+}
+
+#search-bar button {
+    padding-left: 2%;
+    padding-bottom: 2%;
+    padding-top: 2%;
+    padding-right: 2%;
+    float: right;
+}
+
+#submit-button {
+    background: url(img/search%20icon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 55px;
+    height: 55px;
+}
+
+#espace-client {
+    text-align: center;
+    width: 10%;
+    background-color: steelblue;
+    border: 2px groove lightblue;
+}
+
+#espace-client a {
+    display: block;
+    height: 100%;
+    background-color: steelblue;
+    font-size: 180%;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+#panier {
+    text-align: center;
+    width: 10%;
+    background-color: steelblue;
+    border: 2px groove lightblue;
+}
+
+#panier a {
+    display: block;
+    height: 100%;
+    background-color: steelblue;
+    font-size: 180%;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+#panier:hover {
+    background-color: white;
+
+}
+
+#panier a:hover {
+    background-color: white;
+}
