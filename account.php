@@ -26,23 +26,22 @@ $req_fp="SELECT client.PTS_FIDELITE FROM client where client.ID_CLIENT=".$client
 </head>
 
 <header>
-    <table class="navbar">
-        <tr>
-            <td id="logo">
-                <a href="index.html"><img id="main_logo" src="img/googlies%20logo.png"></a>
-            </td>
-            <td id="search-bar">
-                <input type="text" placeholder="Rechercher...">
-                <button id="submit-button" type="submit"></button>
-            </td>
-            <td id="espace-client">
-                <a href="connection.html">Espace Client</a>
-            </td>
-            <td id="panier">
-                <a href="basket.html">Panier</a>
-            </td>
-        </tr>
-    </table>
+    <div class="container-navbar">
+
+        <a href="index.html"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
+
+        <nav>
+            <ul>
+
+                <li><a href="connection.html">Espace Client</a></li>
+
+                <li><a href="basket.html">Panier</a></li>
+
+                <li><a href="index.html">Nous Contacter</a></li>
+            </ul>
+        </nav>
+    </div>
+
 </header>
 
 

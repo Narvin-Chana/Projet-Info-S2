@@ -57,30 +57,23 @@
 
 <body>
     <?php echo($message)?>
-    <form action="connection.php" method="POST">
-        <table>
-            <tr>
-                <Th>Connexion</Th>
-            </tr>
-            <tr>
-                <td></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="mail"></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="password"></td>
-            </tr>
-            <tr>
-                <td><input type="submit"></td>
-            </tr>
-
-        </table>
-
-    </form>
-<a href="createAccount.html">Pas de compte?</a>
-
-
+    <div style="border: 2px solid blue; padding: 1%; text-align: center; margin: auto; margin-top: 10%; width: 40%;">
+        <h2>Connexion</h2>
+        <form action="connection.php" method="POST">
+            <table style="margin:auto;">
+                <tr>
+                    <td>Adresse mail: </td>
+                    <td><input type="text" name="mail"></td>
+                </tr>
+                <tr>
+                    <td>Mot de Passe: </td>
+                    <td><input type="text" name="password"></td>
+                </tr>
+            </table>
+            <button type="submit">Valider</button>
+        </form>
+        <a href="createAccount.html">Pas de compte?</a>
+    </div>
 </body>
 
 </html>

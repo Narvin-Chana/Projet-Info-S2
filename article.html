@@ -2,77 +2,76 @@
 <html lang="fr">
 
 <head>
- <title>Mon panier</title>
- <meta charset="UTF-8">
- <link href="stylesheet.css" rel="stylesheet">
+    <title>Mon panier</title>
+    <meta charset="UTF-8">
+    <link href="stylesheet.css" rel="stylesheet">
 </head>
 
 <header>
-    <table id="navbar">
-        <tr>
-            <td id="logo">
-                <a href="index.html"><img id="main_logo" src="img/googlies%20logo.png"></a>
-            </td>
-            <td id="search-bar">
-                <input type="text" placeholder="Rechercher...">
-	    </td>
-	    <td>
-                <button id="submit-button" type="submit"></button>
-            </td>
-            <td id="espace-client">
-                <a href="account.html">Espace Client</a>
-            </td>
-            <td id="panier">
-                <a href="basket.html">Panier</a>
-            </td>
-        </tr>
-    </table>
+    <div class="container-navbar">
+
+        <a href="index.html"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
+
+        <nav>
+            <ul>
+
+                <li><a href="connection.html">Espace Client</a></li>
+
+                <li><a href="basket.html">Panier</a></li>
+
+                <li><a href="index.html">Nous Contacter</a></li>
+            </ul>
+        </nav>
+    </div>
+
 </header>
 
 <body>
-<div id="page">
-    <table id="tableStyle">
-        <tr>
-	    <td id="tableImgProduct"><img id="imgProduct" src="img/articles/article.png"></td>
-            <td>
-                <table id="tableInfoStyle">
-	            <tr>
-	                <td id="infoProduct">
-	                   <p> Nom du produit </p>
-	                </td>
-	            </tr>
-	            <tr>
-	                <td id="infoProduct">
-	                   <p> prix ht <br>
-	                    prix ttc <br>
-	                    promo <br>
-	                    ttc-promo
-	                   </p>
-	                </td>
-	            </tr>
-                </table>
-            </td>
-            <td id="categoryProduct">
-               <p>categorie/collection (tags)
-	       </p>
-		<table>
-		<tr>
-		<td style="padding-left:55%;">
-		<div id="ajoutPanier">
-                 <a href="basket.html">Ajouter au panier<pre><br></pre></a>
-                </div>
-		</td>
-		</tr>
-		</table>
-            </td>
-        </tr>
-	<tr>
-	    <td colspan=3 id="descrProduct">
-	       <p> description
-	       </p>
-	    </td>
-	</tr>
-    </table>
-</div>
+    <div id="page">
+        <table id="tableStyle">
+            <tr>
+                <td id="tableImgProduct"><img id="imgProduct" src="img/articles/article.png"></td>
+                <td>
+                    <table id="tableInfoStyle">
+                        <tr>
+                            <td id="infoProduct">
+                                <p> Nom du produit </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="infoProduct">
+                                <p> prix ht <br>
+                                    prix ttc <br>
+                                    promo <br>
+                                    ttc-promo
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="categoryProduct">
+                    <p>categorie/collection (tags)
+                    </p>
+                    <table>
+                        <tr>
+                            <td style="padding-left:55%;">
+                                <div id="ajoutPanier">
+                                    <a href="basket.html">Ajouter au panier
+                                        <pre><br></pre></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=3 id="descrProduct">
+                    <p> description
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
 </body>
+
 </html>
