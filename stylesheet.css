@@ -12,11 +12,6 @@ header {
     font-weight: 400;
 }
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
 header::after {
     content: '';
     display: table;
@@ -42,11 +37,10 @@ nav ul {
 
 nav li {
     display: inline-block;
-    margin-left: 60px;
+    margin-left: 30px;
     margin-right: 60px;
     margin-top: 80px;
     margin-bottom: 20px;
-
 }
 
 nav a {
@@ -63,14 +57,46 @@ nav a:hover {
     margin-top: 10px;
 }
 
-
 nav a:active {
     color: white;
     text-shadow: 1px 1px 5px #fff;
     transition: all 0.3s;
 }
 
+.search {
+    position: absolute;
+    left: 25%;
+    top: 7%;
+    width: 28%;
+    height: 50px;
+    background-color: white;
+}
 
+.search input:focus {
+    outline: none;
+}
+
+.search-label {}
+
+.search-bar {
+    width: 90%;
+    float: right;
+    font-size: 2.4em;
+    margin: auto;
+    border: none;
+}
+
+.search-button {
+    background: url(img/search%20icon.png) no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+    margin-left: 3px;
+    margin-top: 1px;
+    text-indent: -99999px;
+    float: left;
+    border: none;
+}
 
 .client_info {
     background-color: lightskyblue;
@@ -83,7 +109,6 @@ nav a:active {
     margin-left: 5%;
     margin-top: 2%;
     color: navy;
-
 }
 
 .loyalty_points {
@@ -106,7 +131,6 @@ nav a:active {
     border-width: 10%;
     padding: 1%;
     margin-top: 0%;
-
 }
 
 .orders {
@@ -115,15 +139,11 @@ nav a:active {
     border-style: solid;
     border-color: navy;
     border-width: 10%;
-
-
 }
 
 .orders th {
     border-style: solid;
     border-color: azure;
-
-
 }
 
 #pts {
