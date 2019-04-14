@@ -23,5 +23,9 @@
 			return("{$value}");	
 		}
 	
-	}    
+	}
+	function research(c) {
+		$req_research="SELECT ID_ARTICLE FROM ((article INNER JOIN categorie USING ID_CATEGORIE) INNER JOIN collection USING ID_COLLECTION) WHERE `NOM_ARTICLE`==".c." OR `PRIX_HT`==".c." OR `PRIX_TTC`==".c." OR `NOM_CATEGORIE`==".c." OR `NOM_COLLECTION`==".c.";";
+		return(convertTableToString(executeSQL($req_research)));
+	}
 ?>
