@@ -11,6 +11,16 @@ $req_email="SELECT client.EMAIL FROM client where client.ID_CLIENT=".$client_id.
 $req_tel="SELECT client.TELEPHONE FROM client where client.ID_CLIENT=".$client_id."; ";
 $req_bd="SELECT client.DATE_NAISSANCE FROM client where client.ID_CLIENT=".$client_id."; ";
 $req_fp="SELECT client.PTS_FIDELITE FROM client where client.ID_CLIENT=".$client_id."; ";
+
+
+$req_commandeids="SELECT commande.ID_COMMANDE FROM(commande Natural JOIN client NATURAL JOIN est_commande NATURAL JOIN article) where client.ID_CLIENT=".$client_id."; ";
+
+
+
+
+
+
+
 ?>
 
 
@@ -41,7 +51,6 @@ $req_fp="SELECT client.PTS_FIDELITE FROM client where client.ID_CLIENT=".$client
             </ul>
         </nav>
     </div>
-
 </header>
 
 
@@ -63,15 +72,46 @@ $req_fp="SELECT client.PTS_FIDELITE FROM client where client.ID_CLIENT=".$client
 
         </div>
         <div class="orders">
-            Mes commandes
             <table>
-
-                <tr>
-                    <th>Id commande</th>
-                    <th>Montant commande</th>
-                    <th>Etat</th>
+            <tr><p id="cmd">Mes commandes</p></tr>
+            <tr>
+                <th id="idc"><p>Id commande</p></th>
+                    <th id="date"><p>Date Commande</p></th>
+                    <th id="ec"><p>Etat</p></th>
+                    <th id="mc"><p>Montant commande</p></th>
                 </tr>
-            </table>
+                <?php
+                    $commandeids=executeSQL($req_commandeids);
+                    $commandeids->data_seek(1);
+
+
+                    while($row=$commandeids->fetch_assoc())
+                    {
+                       
+                        
+
+                        foreach($row as $value)
+                            
+                         
+                            $commandedate=convertTableToString(executeSQL("SELECT commande.DATE_COMMANDE FROM(commande Natural JOIN client NATURAL JOIN est_commande NATURAL JOIN article) where client.ID_CLIENT={$client_id} AND commande.ID_COMMANDE={$value};"));
+                            $commandeprix=convertTableToString(executeSQL("SELECT sum(article.PRIX_TTC) FROM(commande Natural JOIN client NATURAL JOIN est_commande NATURAL JOIN article) where client.ID_CLIENT={$client_id} AND commande.ID_COMMANDE={$value};"));
+                            $commandeetat=convertTableToString(executeSQL("SELECT commande.etat FROM(commande Natural JOIN client NATURAL JOIN est_commande NATURAL JOIN article) where client.ID_CLIENT={$client_id} AND commande.ID_COMMANDE={$value}; "));
+                            echo"<tr>";
+                            echo "<td>{$value}</td>";
+                            echo"<td>".$commandedate."</td>";
+                            echo"<td>".$commandeetat."</td>";
+                            echo"<td>".$commandeprix."</td>";
+                            
+                            echo "</tr>"."<br>";
+                    }
+                        echo'</table>'."<br>";
+            
+
+               
+
+                ?>
+            
+        
 
         </div>
     </div>
