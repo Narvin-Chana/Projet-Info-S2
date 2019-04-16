@@ -37,17 +37,19 @@ nav ul {
 
 nav li {
     display: inline-block;
-    margin-left: 30px;
-    margin-right: 60px;
     margin-top: 80px;
     margin-bottom: 20px;
+}
+
+nav li:last-child {
+    margin-right: 20px;
 }
 
 nav a {
     text-decoration: none;
     color: black;
     font-size: 25px;
-    padding: 40px;
+    padding: 35px;
 }
 
 nav a:hover {
@@ -63,11 +65,15 @@ nav a:active {
     transition: all 0.3s;
 }
 
+.container-navbar {
+    width: 100%;
+}
+
 .search {
     position: absolute;
     left: 25%;
     top: 7%;
-    width: 28%;
+    width: 32%;
     height: 50px;
     background-color: white;
 }
@@ -76,10 +82,12 @@ nav a:active {
     outline: none;
 }
 
-.search-label {}
+.search-label {
+    width: 100%;
+}
 
 .search-bar {
-    width: 90%;
+    width: 85%;
     float: right;
     font-size: 2.4em;
     margin: auto;
