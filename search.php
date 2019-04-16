@@ -38,7 +38,9 @@
 
 <body>
 
-    <?php
+    <div class="product">
+        <form action="article.php" method="get">
+            <?php
 
 require("main.php");
 
@@ -62,15 +64,18 @@ WHERE `NOM_ARTICLE` like '%{$searchString}%' OR `DESCRIPTION` like '%{$searchStr
             $articleName = $row["NOM_ARTICLE"];
             $price = $row["PRIX_TTC"];
             $image = $row["IMAGE"];
-        }
-        echo $articleName;
-        for($x=0; $x <= $len; $x++) {
+        
+            echo $articleName;
+                foreach($row["NOM_ARTICLE"] as $value) { ?>
+
+
+            <input type=submit name="<?php echo $value; ?>">
+
+            <?php }
+                foreach($row["IMAGE"] as $value){ 
             ?>
 
-    <div class="product">
-        <form action="article.php" method="get">
-            <input type=submit name="<?php echo $articleName[$x]; ?>">
-            <img src="<?php echo $image[$x]; ?>">
+            <img src="<?php echo $value ?>">
         </form>
     </div>
 
@@ -82,6 +87,6 @@ WHERE `NOM_ARTICLE` like '%{$searchString}%' OR `DESCRIPTION` like '%{$searchStr
 <?php 
             
             
-} } }
+} } } }
 
 ?>
