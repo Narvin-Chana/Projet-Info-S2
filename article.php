@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 require("main.php");
 session_start();
-$article_id=research($_SESSION["research"]);	//research() peut ne pas renvoyer qu'un seul article, il faudra alors renvoyer une liste de choix à l'utilisateur
+$article_id=1;	//research() peut ne pas renvoyer qu'un seul article, il faudra alors renvoyer une liste de choix à l'utilisateur
 
 $req_img = "SELECT article.IMAGE FROM article where article.ID_ARTICLE=".$article_id."; ";
 $req_nom_produit = "SELECT article.NOM_ARTICLE FROM article where article.ID_ARTICLE=".$article_id."; ";
@@ -45,7 +45,7 @@ $req_description = "SELECT article.DESCRIPTION FROM article where article.ID_ART
     <div id="page">
         <table id="tableStyle">
             <tr>
-                <td id="tableImgProduct"><img id="imgProduct" src="img/articles/	<?php echo(convertTableToString(executeSQL($req_nom_produit)));?>	"></td>
+                <td id="tableImgProduct"><img id="imgProduct" src="img/articles/<?php echo(convertTableToString(executeSQL($req_img)));?>></td>
                 <td>
                     <table id="tableInfoStyle">
                         <tr>
