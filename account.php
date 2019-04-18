@@ -1,7 +1,12 @@
 <?php
 
 require("main.php");
+
 session_start();
+if($_SESSION['id']==NULL){
+    redirection("account.php");
+}
+
 $client_id=$_SESSION["id"];
 
 
@@ -38,16 +43,29 @@ $req_commandeids="SELECT commande.ID_COMMANDE FROM(commande Natural JOIN client 
 <header>
     <div class="container-navbar">
 
-        <a href="index.html"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
+        <a href="index.php"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
 
         <nav>
             <ul>
 
-                <li><a href="connection.html">Espace Client</a></li>
+                <li><a href="account.php">Espace Client</a></li>
 
-                <li><a href="basket.html">Panier</a></li>
+                <li><a href="basket.php">Panier</a></li>
 
-                <li><a href="index.html">Nous Contacter</a></li>
+                <li><?php
+                 if($_SESSION['id']==NULL){
+                     //var_dump($_SESSION);
+                     echo("<a href='connection.html'>Connexion</a>");
+                }
+                else{
+                    
+                   
+                    echo("<a href='disconnection.php'>Deconnexion</a>");
+                }
+                
+                
+                
+                ?></li>
             </ul>
         </nav>
     </div>
@@ -57,6 +75,7 @@ $req_commandeids="SELECT commande.ID_COMMANDE FROM(commande Natural JOIN client 
 <body>
     <div class="my_account">
         <p id="title">Mon Compte </p>
+        
         <div class="client_info">
             <p>Nom: <?php echo(convertTableToString(executeSQL($req_nom)));?></p>
             <p>Prenom: <?php echo(convertTableToString(executeSQL($req_prenom)));?></p>

@@ -33,4 +33,18 @@
 			return("");
 		}
 	}
+	function redirection($wanted_page){
+		session_start();
+		
+		if($_SESSION['id']==NULL){
+			
+			$_SESSION["wanted_page"]=$wanted_page;
+			header('location:connection.html');
+			
+		}
+		else{
+			header('location:'.$wanted_page);
+		}
+	}
+	
 ?>

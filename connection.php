@@ -28,7 +28,8 @@
 				$client_id=convertTableToString($ServerSQL->query($req_c));
 				session_start();
 				$_SESSION["id"]=$client_id;
-				header('location:account.php');
+				$wanted_page=$_SESSION["wanted_page"];
+				header('location:'.$wanted_page);
 				
 			}
 			$message="Mot de passe incorrect ";
