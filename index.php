@@ -13,7 +13,7 @@
 <header>
     <div class="container-navbar">
 
-        <a href="index.html"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
+        <a href="index.php"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
 
         <div class="search">
 
