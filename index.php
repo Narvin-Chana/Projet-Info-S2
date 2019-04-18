@@ -36,6 +36,7 @@
                  if($_SESSION['id']==NULL){
                      //var_dump($_SESSION);
                      echo("<a href='connection.html'>Connexion</a>");
+                     $_SESSION["wanted_page"]="index.php";
                 }
                 else{
                     
