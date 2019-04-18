@@ -46,5 +46,18 @@
 			header('location:'.$wanted_page);
 		}
 	}
-	
+	function AddToBasket($id_article){
+		
+		if($_SESSION['article'][$id_article]==NULL){
+			$_SESSION['article'][$id_article]=1;
+
+		}
+		else{
+			$_SESSION['article'][$id_article]+=1;
+		}
+	}
+	function RemoveFromBasket($id_article){
+		
+		unset($_SESSION['article'][$id_article]);
+	}
 ?>
