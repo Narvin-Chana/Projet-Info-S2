@@ -25,16 +25,29 @@ $req_description = "SELECT article.DESCRIPTION FROM article where article.ID_ART
 <header>
     <div class="container-navbar">
 
-        <a href="index.html"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
+        <a href="index.php"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
 
         <nav>
             <ul>
 
-                <li><a href="connection.html">Espace Client</a></li>
+                <li><a href="account.php">Espace Client</a></li>
 
                 <li><a href="basket.html">Panier</a></li>
 
-                <li><a href="index.html">Nous Contacter</a></li>
+                <li><?php
+                 if($_SESSION['id']==NULL){
+                     //var_dump($_SESSION);
+                     echo("<a href='connection.html'>Connexion</a>");
+                }
+                else{
+                    
+                   
+                    echo("<a href='disconnection.php'>Deconnexion</a>");
+                }
+                
+                
+                
+                ?></li>
             </ul>
         </nav>
     </div>
