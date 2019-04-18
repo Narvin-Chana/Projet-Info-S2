@@ -23,7 +23,7 @@ if($_SESSION['id']==NULL){
         <nav>
             <ul>
 
-                <li><a href="connection.html">Espace Client</a></li>
+                <li><a href="account.php">Espace Client</a></li>
 
                 <li><a href="basket.php">Panier</a></li>
 
