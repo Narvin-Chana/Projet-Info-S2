@@ -3,7 +3,6 @@ require("main.php");
 session_start();
 
 $article_id=$_GET["id"];
-//$article_id=1;
 $req_img = "SELECT article.IMAGE FROM article where article.ID_ARTICLE={$article_id}; ";
 $req_nom_produit = "SELECT article.NOM_ARTICLE FROM article where article.ID_ARTICLE={$article_id}; ";
 $req_prix_ttc = "SELECT article.PRIX_TTC FROM article where article.ID_ARTICLE={$article_id}; ";
@@ -39,13 +38,8 @@ $req_description = "SELECT article.DESCRIPTION FROM article where article.ID_ART
                      echo("<a href='connection.html'>Connexion</a>");
                 }
                 else{
-                    
-                   
                     echo("<a href='disconnection.php'>Deconnexion</a>");
                 }
-                
-                
-                
                 ?></li>
             </ul>
         </nav>
@@ -55,45 +49,24 @@ $req_description = "SELECT article.DESCRIPTION FROM article where article.ID_ART
 
 <body>
     <div id="page">
-        <table id="tableStyle">
-            <tr>
-                <td id="tableImgProduct"><img id="imgProduct" src="img/articles/<?php echo(convertTableToString(executeSQL($req_img)));?>></td>
-                <td>
-                    <table id="tableInfoStyle">
-                        <tr>
-                            <td id="infoProduct">
-                                <p> <?php echo(convertTableToString(executeSQL($req_nom_produit)));?> </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="infoProduct">
-                                <p> <?php $prix_ttc = convertTableToString(executeSQL($req_prix_ttc));
-				                    echo($prix_ttc);?>
-                                </p>
-                            </td>
-                        </tr>
-                    
-                </td>
-                <td id="categoryProduct">
-                    <p> <?php echo(convertTableToString(executeSQL($req_category)));?> de <?php echo(convertTableToString(executeSQL($req_collection)));?> </p>
-                    
-                        <tr>
-                            <td style="padding-left:55%;">
-                                <div id="ajoutPanier">
-                                    <a href="basket.html">Ajouter au panier
-                                        <pre><br></pre></a>
-                                </div>
-                            </td>
-                        </tr>
-                  
-                </td>
-            </tr>
-            <tr>
-                <td colspan=3 id="descrProduct">
-                    <p> <?php echo(convertTableToString(executeSQL($req_description)));?> </p>
-                </td>
-            </tr>
-        </table>
+
+        <p style="text-align: center; margin:0; margin-top:2%; font-weight: bold; font-size: 2em; text-decoration: underline;"> <?php echo(convertTableToString(executeSQL($req_nom_produit)));?> </p>
+
+        <img id="imgProduct" src="img/articles/<?php echo(convertTableToString(executeSQL($req_img)));?>" style="width: 20%; margin: 3%; float: left;">
+
+        <div style="float:right; margin-right: 10%; padding: 10px;">
+            <p style="font-size: 4em; border: 2px solid black;"> <?php $prix_ttc = convertTableToString(executeSQL($req_prix_ttc)); echo($prix_ttc);?>€</p>
+            <a href="basket.php">Ajouter au panier</a>
+        </div>
+
+        <div style="margin-top: 5%;">
+            <p> <?php echo(convertTableToString(executeSQL($req_category)));?> de <?php echo(convertTableToString(executeSQL($req_collection)));?> </p>
+        </div>
+
+
+        <p> <?php echo(convertTableToString(executeSQL($req_description)));?> </p>
+
+
     </div>
 </body>
 
