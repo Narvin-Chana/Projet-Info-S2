@@ -20,6 +20,17 @@ if($_SESSION['id']==NULL){
 
         <a href="index.php"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
 
+        <div class="search">
+
+            <form action=search.php method="post">
+                <label class="search-label">
+                    <input type="text" name="q" class="search-bar" placeholder="Rechercher...">
+                    <input type="submit" class="search-button">
+                </label>
+            </form>
+
+        </div>
+        
         <nav>
             <ul>
 
