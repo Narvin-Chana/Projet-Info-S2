@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 23, 2019 at 05:48 PM
+-- Generation Time: Apr 23, 2019 at 05:55 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -155,14 +155,15 @@ CREATE TABLE IF NOT EXISTS `commande` (
   PRIMARY KEY (`ID_COMMANDE`),
   KEY `COMMANDE_CLIENT_FK` (`ID_CLIENT`),
   KEY `COMMANDE_LIVRAISON0_FK` (`ID_LIVRAISON`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `commande`
 --
 
 INSERT INTO `commande` (`ID_COMMANDE`, `DATE_COMMANDE`, `ETAT`, `ID_CLIENT`, `ID_LIVRAISON`) VALUES
-(1, '2019-02-02', 'Livre', 1, 1);
+(1, '2019-02-02', 'Livre', 2, 1),
+(2, '2019-03-05', 'Livre', 2, 1);
 
 -- --------------------------------------------------------
 
