@@ -38,9 +38,8 @@
 
 <body>
 
-    <div class="product">
-        <form action="article.php" method="get">
-            <?php
+    <form style="padding: 0;" action="article.php" method="get">
+        <?php  session_start();
 
 require("main.php");
 
@@ -60,24 +59,25 @@ WHERE `NOM_ARTICLE` like '%{$searchString}%' OR `DESCRIPTION` like '%{$searchStr
         echo "Il n'y a pas eu de résultat!"; 
     }
     else {
-        while($row = $articles->fetch_assoc()) {
+        while($row = mysqli_fetch_assoc($articles)) {
             $articleName = $row["NOM_ARTICLE"];
             $price = $row["PRIX_TTC"];
             $image = $row["IMAGE"];
-        
-            echo $articleName;
-                foreach($row["NOM_ARTICLE"] as $value) { ?>
-
-
-            <input type=submit name="<?php echo $value; ?>">
-
-            <?php }
-                foreach($row["IMAGE"] as $value){ 
+            $desc = $row["DESCRIPTION"];
             ?>
 
-            <img src="<?php echo $value ?>">
-        </form>
-    </div>
+        <div style="text-align: center; border: 1px solid black; margin-left: 2%; margin-right:0; margin-top: 1%; margin-bottom: 1%; padding: 0;">
+
+            <h2><?php echo $articleName; ?></h2>
+
+            <img src="<?php echo "img/articles/".$image ?>" alt="<?php echo $articleName; ?>" style="width: 10%;">
+
+            <p><?php echo $desc; ?></p>
+
+            <input type=submit name="<?php echo $articleName; ?>">
+        </div>
+
+    </form>
 
 
 
@@ -87,6 +87,6 @@ WHERE `NOM_ARTICLE` like '%{$searchString}%' OR `DESCRIPTION` like '%{$searchStr
 <?php 
             
             
-} } } }
+} } } 
 
 ?>
