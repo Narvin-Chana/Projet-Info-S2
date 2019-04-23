@@ -1,12 +1,12 @@
 ﻿<?php
 require("main.php");
 session_start();
-$article_id=research($_SESSION["research"]);	//research() peut ne pas renvoyer qu'un seul article, il faudra alors renvoyer une liste de choix à l'utilisateur
 
-$req_img = "SELECT article.IMAGE FROM article where article.ID_ARTICLE=".$article_id."; ";
-$req_nom_produit = "SELECT article.NOM_ARTICLE FROM article where article.ID_ARTICLE=".$article_id."; ";
-$req_prix_ht = "SELECT article.PRIX_HT FROM article where article.ID_ARTICLE=".$article_id."; ";
-$req_prix_ttc = "SELECT article.PRIX_TTC FROM article where article.ID_ARTICLE=".$article_id."; ";
+$article_id=$_SESSION["search"];
+$req_img = "SELECT article.IMAGE FROM article where article.ID_ARTICLE={$article_id}; ";
+$req_nom_produit = "SELECT article.NOM_ARTICLE FROM article where article.ID_ARTICLE={$article_id}; ";
+$req_prix_ht = "SELECT article.PRIX_HT FROM article where article.ID_ARTICLE={$article_id}; ";
+$req_prix_ttc = "SELECT article.PRIX_TTC FROM article where article.ID_ARTICLE={$article_id}; ";
 $req_promo = "SELECT article.REDUCTION FROM ((article INNER JOIN est_en_promo USING ID_ARTICLE) INNER JOIN promotion USING ID_PROMO) where article.ID_ARTICLE=".$article_id."; ";
 $req_category = "SELECT article.NOM_CATEGORIE FROM (article INNER JOIN categorie USING ID_CATEGORIE) where article.ID_ARTICLE=".$article_id."; ";
 $req_collection = "SELECT article.NOM_COLLECTION FROM (article INNER JOIN categorie USING ID_COLLECTION) where article.ID_ARTICLE=".$article_id."; ";
