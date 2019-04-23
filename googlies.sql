@@ -2,10 +2,10 @@
 -- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 10 avr. 2019 à 13:35
--- Version du serveur :  5.7.24
--- Version de PHP :  7.2.14
+-- Host: 127.0.0.1:3306
+-- Generation Time: Apr 23, 2019 at 04:55 PM
+-- Server version: 5.7.24
+-- PHP Version: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `googlies`
+-- Database: `googlies`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `article`
+-- Table structure for table `article`
 --
 
 DROP TABLE IF EXISTS `article`;
@@ -33,7 +33,6 @@ CREATE TABLE IF NOT EXISTS `article` (
   `ID_ARTICLE` int(11) NOT NULL AUTO_INCREMENT,
   `NOM_ARTICLE` varchar(50) NOT NULL,
   `DESCRIPTION` longtext NOT NULL,
-  `PRIX_HT` float NOT NULL,
   `PRIX_TTC` float NOT NULL,
   `IMAGE` varchar(50) NOT NULL,
   `ID_CATEGORIE` int(11) NOT NULL,
@@ -44,21 +43,21 @@ CREATE TABLE IF NOT EXISTS `article` (
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `article`
+-- Dumping data for table `article`
 --
 
-INSERT INTO `article` (`ID_ARTICLE`, `NOM_ARTICLE`, `DESCRIPTION`, `PRIX_HT`, `PRIX_TTC`, `IMAGE`, `ID_CATEGORIE`, `ID_COLLECTION`) VALUES
-(1, 'Mug DarkVador', 'C\'est une tasse dark Vador', 13.75, 11, '', 1, 1),
-(2, 'Mug Captain America', 'tasse captain america', 13.75, 11, '', 1, 2),
-(3, 'Sac Gryffondor', 'Sac a dos de la maison Gryffondor de Harry potter', 25, 20, '', 5, 9),
-(4, 'Sac Serpentard', 'Sac a dos de la maison Serpentard de Harry potter', 25, 20, '', 5, 9),
-(5, 'Poster Indiana Jones Temple Maudit', 'Poster issu du film indiana Jones et le temple Maudit', 15, 12, '', 4, 3),
-(6, 'Figurine John Snow', 'Figurine John Snow issu de la serie Game of thrones', 31.25, 25, '', 3, 5);
+INSERT INTO `article` (`ID_ARTICLE`, `NOM_ARTICLE`, `DESCRIPTION`, `PRIX_TTC`, `IMAGE`, `ID_CATEGORIE`, `ID_COLLECTION`) VALUES
+(1, 'Mug DarkVador', 'C\'est une tasse dark Vador', 11, 'mug_01.jpg', 1, 1),
+(2, 'Mug Captain America', 'tasse captain america', 11, 'mug_02.jpg', 1, 2),
+(3, 'Sac Gryffondor', 'Sac a dos de la maison Gryffondor de Harry potter', 20, 'bag_01.jpg', 5, 9),
+(4, 'Sac Serpentard', 'Sac a dos de la maison Serpentard de Harry potter', 20, 'bag_02.jpg', 5, 9),
+(5, 'Poster Indiana Jones Temple Maudit', 'Poster issu du film indiana Jones et le temple Maudit', 12, 'poster_01.jpg', 4, 3),
+(6, 'Figurine John Snow', 'Figurine John Snow issu de la serie Game of thrones', 25, 'figurine_01.jpg', 3, 5);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `categorie`
+-- Table structure for table `categorie`
 --
 
 DROP TABLE IF EXISTS `categorie`;
@@ -69,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `categorie` (
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `categorie`
+-- Dumping data for table `categorie`
 --
 
 INSERT INTO `categorie` (`ID_CATEGORIE`, `NOM_CATEGORIE`) VALUES
@@ -82,7 +81,7 @@ INSERT INTO `categorie` (`ID_CATEGORIE`, `NOM_CATEGORIE`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `client`
+-- Table structure for table `client`
 --
 
 DROP TABLE IF EXISTS `client`;
@@ -94,25 +93,27 @@ CREATE TABLE IF NOT EXISTS `client` (
   `PRENOM` varchar(50) NOT NULL,
   `TELEPHONE` varchar(10) NOT NULL,
   `DATE_NAISSANCE` date NOT NULL,
-  `PTS_FIDELITE` int(11) DEFAULT '0',
+  `PTS_FIDELITE` int(11) NOT NULL DEFAULT '0',
   `ADRESSE` varchar(50) DEFAULT NULL,
   `COORD_BANC` varchar(16) DEFAULT NULL,
   PRIMARY KEY (`ID_CLIENT`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `client`
+-- Dumping data for table `client`
 --
 
 INSERT INTO `client` (`ID_CLIENT`, `EMAIL`, `MDP`, `NOM`, `PRENOM`, `TELEPHONE`, `DATE_NAISSANCE`, `PTS_FIDELITE`, `ADRESSE`, `COORD_BANC`) VALUES
 (1, 'narvin.chana@etu.univ-tours.fr', 'motdepasse', 'Chana', 'Narvin', '0675908412', '2000-08-21', 0, 'tours', '1452698763254785'),
 (2, 'simple@gmail.com', '12345', 'Simplet', 'Francky', '0789642536', '1985-06-29', 180, 'Paris', '7854458778547854'),
-(3, 'charlie.dupont@orange.fr', 'password', 'dupont', 'charlie', '0736459685', '1996-12-04', 30, 'Angers', '0147852036985201');
+(3, 'charlie.dupont@orange.fr', 'password', 'dupont', 'charlie', '0736459685', '1996-12-04', 30, 'Angers', '0147852036985201'),
+(4, 'bastien.camembert@etu.univ-tours.fr', 'caca', 'Bastien', 'Bastien', '123456789', '1999-04-25', 0, NULL, NULL),
+(5, '', '', '', '', '', '1970-01-01', 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `collection`
+-- Table structure for table `collection`
 --
 
 DROP TABLE IF EXISTS `collection`;
@@ -123,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `collection` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `collection`
+-- Dumping data for table `collection`
 --
 
 INSERT INTO `collection` (`ID_COLLECTION`, `NOM_COLLECTION`) VALUES
@@ -141,7 +142,7 @@ INSERT INTO `collection` (`ID_COLLECTION`, `NOM_COLLECTION`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commande`
+-- Table structure for table `commande`
 --
 
 DROP TABLE IF EXISTS `commande`;
@@ -157,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `commande` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `commande`
+-- Dumping data for table `commande`
 --
 
 INSERT INTO `commande` (`ID_COMMANDE`, `DATE_COMMANDE`, `ETAT`, `ID_CLIENT`, `ID_LIVRAISON`) VALUES
@@ -166,7 +167,7 @@ INSERT INTO `commande` (`ID_COMMANDE`, `DATE_COMMANDE`, `ETAT`, `ID_CLIENT`, `ID
 -- --------------------------------------------------------
 
 --
--- Structure de la table `est_commande`
+-- Table structure for table `est_commande`
 --
 
 DROP TABLE IF EXISTS `est_commande`;
@@ -178,7 +179,7 @@ CREATE TABLE IF NOT EXISTS `est_commande` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `est_commande`
+-- Dumping data for table `est_commande`
 --
 
 INSERT INTO `est_commande` (`ID_ARTICLE`, `ID_COMMANDE`) VALUES
@@ -188,21 +189,7 @@ INSERT INTO `est_commande` (`ID_ARTICLE`, `ID_COMMANDE`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `est_en_promo`
---
-
-DROP TABLE IF EXISTS `est_en_promo`;
-CREATE TABLE IF NOT EXISTS `est_en_promo` (
-  `ID_PROMO` int(11) NOT NULL,
-  `ID_ARTICLE` int(11) NOT NULL,
-  PRIMARY KEY (`ID_PROMO`,`ID_ARTICLE`),
-  KEY `EST_EN_PROMO_ARTICLE0_FK` (`ID_ARTICLE`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `etre`
+-- Table structure for table `etre`
 --
 
 DROP TABLE IF EXISTS `etre`;
@@ -217,7 +204,7 @@ CREATE TABLE IF NOT EXISTS `etre` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `livraison`
+-- Table structure for table `livraison`
 --
 
 DROP TABLE IF EXISTS `livraison`;
@@ -229,7 +216,7 @@ CREATE TABLE IF NOT EXISTS `livraison` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `livraison`
+-- Dumping data for table `livraison`
 --
 
 INSERT INTO `livraison` (`ID_LIVRAISON`, `LIVREUR`, `DATE_LIVRAISON`) VALUES
@@ -244,20 +231,20 @@ INSERT INTO `livraison` (`ID_LIVRAISON`, `LIVREUR`, `DATE_LIVRAISON`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `promotion`
+-- Table structure for table `promotion`
 --
 
 DROP TABLE IF EXISTS `promotion`;
 CREATE TABLE IF NOT EXISTS `promotion` (
   `ID_PROMO` int(11) NOT NULL AUTO_INCREMENT,
-  `REDUCTION` int(3),
+  `REDUCTION` varchar(50) NOT NULL,
   PRIMARY KEY (`ID_PROMO`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `taille`
+-- Table structure for table `taille`
 --
 
 DROP TABLE IF EXISTS `taille`;
@@ -268,39 +255,32 @@ CREATE TABLE IF NOT EXISTS `taille` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `article`
+-- Constraints for table `article`
 --
 ALTER TABLE `article`
   ADD CONSTRAINT `ARTICLE_CATEGORIE_FK` FOREIGN KEY (`ID_CATEGORIE`) REFERENCES `categorie` (`ID_CATEGORIE`),
   ADD CONSTRAINT `ARTICLE_COLLECTION0_FK` FOREIGN KEY (`ID_COLLECTION`) REFERENCES `collection` (`ID_COLLECTION`);
 
 --
--- Contraintes pour la table `commande`
+-- Constraints for table `commande`
 --
 ALTER TABLE `commande`
   ADD CONSTRAINT `COMMANDE_CLIENT_FK` FOREIGN KEY (`ID_CLIENT`) REFERENCES `client` (`ID_CLIENT`),
   ADD CONSTRAINT `COMMANDE_LIVRAISON0_FK` FOREIGN KEY (`ID_LIVRAISON`) REFERENCES `livraison` (`ID_LIVRAISON`);
 
 --
--- Contraintes pour la table `est_commande`
+-- Constraints for table `est_commande`
 --
 ALTER TABLE `est_commande`
   ADD CONSTRAINT `EST_COMMANDE_ARTICLE_FK` FOREIGN KEY (`ID_ARTICLE`) REFERENCES `article` (`ID_ARTICLE`),
   ADD CONSTRAINT `EST_COMMANDE_COMMANDE0_FK` FOREIGN KEY (`ID_COMMANDE`) REFERENCES `commande` (`ID_COMMANDE`);
 
 --
--- Contraintes pour la table `est_en_promo`
---
-ALTER TABLE `est_en_promo`
-  ADD CONSTRAINT `EST_EN_PROMO_ARTICLE0_FK` FOREIGN KEY (`ID_ARTICLE`) REFERENCES `article` (`ID_ARTICLE`),
-  ADD CONSTRAINT `EST_EN_PROMO_PROMOTION_FK` FOREIGN KEY (`ID_PROMO`) REFERENCES `promotion` (`ID_PROMO`);
-
---
--- Contraintes pour la table `etre`
+-- Constraints for table `etre`
 --
 ALTER TABLE `etre`
   ADD CONSTRAINT `ETRE_ARTICLE_FK` FOREIGN KEY (`ID_ARTICLE`) REFERENCES `article` (`ID_ARTICLE`),
