@@ -1,3 +1,6 @@
+<?php session_start();
+
+?>
 <!DOCTYPE html>
 <html lang=" fr">
 
@@ -10,7 +13,7 @@
 <header>
     <div class="container-navbar">
 
-        <a href="index.html"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
+        <a href="index.php"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
 
         <div class="search">
 
@@ -25,11 +28,25 @@
 
         <nav>
             <ul>
-                <li><a href="connection.html">Espace Client</a></li>
+                <li><a href="account.php">Espace Client</a></li>
 
-                <li><a href="basket.html">Panier</a></li>
+                <li><a href="basket.php">Panier</a></li>
 
-                <li><a href="index.html">Nous Contacter</a></li>
+                <li><?php
+                 if($_SESSION['id']==NULL){
+                     //var_dump($_SESSION);
+                     echo("<a href='connection.html'>Connexion</a>");
+                     $_SESSION["wanted_page"]="index.php";
+                }
+                else{
+                    
+                   
+                    echo("<a href='disconnection.php'>Deconnexion</a>");
+                }
+                
+                
+                
+                ?></li>
             </ul>
         </nav>
     </div>
@@ -39,7 +56,7 @@
 <body>
 
     <form style="padding: 0;" action="article.php" method="get">
-        <?php  session_start();
+        <?php 
 
 require("main.php");
 
@@ -61,6 +78,7 @@ WHERE `NOM_ARTICLE` like '%{$searchString}%' OR `DESCRIPTION` like '%{$searchStr
     else {
         while($row = mysqli_fetch_assoc($articles)) {
             $articleName = $row["NOM_ARTICLE"];
+            $articleID = $row["ID_ARTICLE"];
             $price = $row["PRIX_TTC"];
             $image = $row["IMAGE"];
             $desc = $row["DESCRIPTION"];
@@ -74,7 +92,7 @@ WHERE `NOM_ARTICLE` like '%{$searchString}%' OR `DESCRIPTION` like '%{$searchStr
 
             <p><?php echo $desc; ?></p>
 
-            <input type=submit name="<?php echo $articleName; ?>">
+            <input type=submit value="<?php $articleID; ?>" name="id">
         </div>
 
     </form>
