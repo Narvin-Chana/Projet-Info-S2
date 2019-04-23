@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require("main.php");
 session_start();
 
@@ -9,6 +9,8 @@ $req_prix_ttc = "SELECT article.PRIX_TTC FROM article where article.ID_ARTICLE={
 $req_category = "SELECT categorie.NOM_CATEGORIE FROM (article NATURAL JOIN categorie ) where article.ID_ARTICLE={$article_id}; ";
 $req_collection = "SELECT collection.NOM_COLLECTION FROM (article NATURAL JOIN collection) where article.ID_ARTICLE={$article_id}; ";
 $req_description = "SELECT article.DESCRIPTION FROM article where article.ID_ARTICLE={$article_id}; ";
+
+
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +26,17 @@ $req_description = "SELECT article.DESCRIPTION FROM article where article.ID_ART
     <div class="container-navbar">
 
         <a href="index.php"><img src="img/googlies%20logo%20new.png" class="logo" alt="googlies logo"></a>
+
+        <div class="search">
+
+            <form action=search.php method="post">
+                <label class="search-label">
+                    <input type="text" name="q" class="search-bar" placeholder="Rechercher...">
+                    <input type="submit" class="search-button">
+                </label>
+            </form>
+
+        </div>
 
         <nav>
             <ul>
@@ -56,13 +69,14 @@ $req_description = "SELECT article.DESCRIPTION FROM article where article.ID_ART
 
         <div style="float:right; margin-right: 10%; padding: 10px;">
             <p style="font-size: 4em; border: 2px solid black;"> <?php $prix_ttc = convertTableToString(executeSQL($req_prix_ttc)); echo($prix_ttc);?>€</p>
-            <a href="basket.php">Ajouter au panier</a>
+
+            <button type="submit" name="addToBasket">Ajouter au panier</button>
+
         </div>
 
         <div style="margin-top: 5%;">
             <p> <?php echo(convertTableToString(executeSQL($req_category)));?> de <?php echo(convertTableToString(executeSQL($req_collection)));?> </p>
         </div>
-
 
         <p> <?php echo(convertTableToString(executeSQL($req_description)));?> </p>
 

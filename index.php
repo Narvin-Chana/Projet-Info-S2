@@ -55,7 +55,7 @@
 
 <body>
 
-
+    <h1 style="text-align: center;">Bienvenue sur googlies!!</h1>
 
 </body>
 

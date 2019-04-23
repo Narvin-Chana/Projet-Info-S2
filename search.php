@@ -44,8 +44,6 @@
                     echo("<a href='disconnection.php'>Deconnexion</a>");
                 }
                 
-                
-                
                 ?></li>
             </ul>
         </nav>
@@ -55,8 +53,7 @@
 
 <body>
 
-    <form style="padding: 0;" action="article.php" method="get">
-        <?php 
+    <?php 
 
 require("main.php");
 
@@ -84,26 +81,24 @@ WHERE `NOM_ARTICLE` like '%{$searchString}%' OR `DESCRIPTION` like '%{$searchStr
             $desc = $row["DESCRIPTION"];
             ?>
 
-        <div style="text-align: center; border: 1px solid black; margin-left: 2%; margin-right:0; margin-top: 1%; margin-bottom: 1%; padding: 0;">
+    <div style="text-align: center; border: 1px solid black; margin-left: 2%; margin-right:2%; margin-top: 1%; margin-bottom: 1%; padding-bottom: 5px;;">
 
-            <h2><?php echo $articleName; ?></h2>
+        <form style="padding: 0;" action="article.php" method="get">
+
+            <h2><?php echo $articleName; echo " ".$price ?>€</h2>
 
             <img src="<?php echo "img/articles/".$image ?>" alt="<?php echo $articleName; ?>" style="width: 10%;">
 
             <p><?php echo $desc; ?></p>
 
-            <input type=submit value="<?php $articleID; ?>" name="id">
-        </div>
-
-    </form>
-
-
+            <input type=submit value="Voir l'article" name="id">
+        </form>
+    </div>
 
 </body>
 
 </html>
-<?php 
-            
+<?php      
             
 } } } 
 

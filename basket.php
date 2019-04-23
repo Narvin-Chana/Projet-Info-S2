@@ -58,10 +58,7 @@ if($_SESSION['id']==NULL){
 
 </header>
 
-<body>  
-     <div class="basket">
-        <p id="title">Mon Panier </p>
-    </div>
+<body>
 
 
 </body>

@@ -145,54 +145,55 @@ nav a:active {
 .orders {
     background-color: lightskyblue;
     margin-top: 20%;
-    margin-left:5%;
+    margin-left: 5%;
     border-style: solid;
     border-color: navy;
     border-width: 10%;
     text-align: center;
-    width:80%;
+    width: 80%;
 }
 
 .orders th {
     border-style: solid;
     border-right-style: solid;
-    
+
     margin-bottom: 10%;
-    border-color:navy;
+    border-color: navy;
     font-size: 150%
-    
 }
+
 .orders td {
     font-size: 150%;
     border-bottom-style: solid;
-    border-color:navy;
+    border-color: navy;
 }
 
-#cmd{
-    
+#cmd {
+
     color: navy;
     font-weight: bold;
     font-size: 150%;
     padding-top: 2%;
-  
-}
-
-#idc  {
-    width:7%;
-
-}
-#date  {
-    width:34%;
 
 }
 
-#ec  {
-    width:10%;
+#idc {
+    width: 7%;
 
 }
 
-#mc  {
-    width:14%;
+#date {
+    width: 34%;
+
+}
+
+#ec {
+    width: 10%;
+
+}
+
+#mc {
+    width: 14%;
 
 }
 
@@ -202,6 +203,7 @@ nav a:active {
     font-weight: bold;
     font-size: 300%;
 }
+
 /**/
 
 #page {
@@ -264,4 +266,8 @@ nav a:active {
 
 #ajoutPanier:hover {
     background-color: white;
+}
+
+#page p {
+    margin-left: 3%;
 }
