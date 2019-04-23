@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 23, 2019 at 04:55 PM
+-- Generation Time: Apr 23, 2019 at 05:48 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -47,8 +47,8 @@ CREATE TABLE IF NOT EXISTS `article` (
 --
 
 INSERT INTO `article` (`ID_ARTICLE`, `NOM_ARTICLE`, `DESCRIPTION`, `PRIX_TTC`, `IMAGE`, `ID_CATEGORIE`, `ID_COLLECTION`) VALUES
-(1, 'Mug DarkVador', 'C\'est une tasse dark Vador', 11, 'mug_01.jpg', 1, 1),
-(2, 'Mug Captain America', 'tasse captain america', 11, 'mug_02.jpg', 1, 2),
+(1, 'Mug DarkVador', 'Tasse dark Vador de 300mL, qualité d\'exception, produite en France.', 11, 'mug_01.jpg', 1, 1),
+(2, 'Mug Captain America', 'Tasse Captain America de 300mL, qualité d\'exception, produite en France.', 11, 'mug_02.jpg', 1, 2),
 (3, 'Sac Gryffondor', 'Sac a dos de la maison Gryffondor de Harry potter', 20, 'bag_01.jpg', 5, 9),
 (4, 'Sac Serpentard', 'Sac a dos de la maison Serpentard de Harry potter', 20, 'bag_02.jpg', 5, 9),
 (5, 'Poster Indiana Jones Temple Maudit', 'Poster issu du film indiana Jones et le temple Maudit', 12, 'poster_01.jpg', 4, 3),
